@@ -1,64 +1,276 @@
 @import "_normalize.scss";
 @import "_variables.scss";
 @import "_sprite.scss";
+@import "_animate.scss";
 
-html {
-	font-size: 16px;
+html, body, .all-wrapper, .main-content {
 	height: 100%;
 }
 
 body {
-	background: $bgColor;
-	font-family: $fontFamily;
-	color: $mainColor;
-	min-height: 100%;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
+	overflow-x: hidden;
 }
 
-.all-wrapper {
-	flex: 1;
+.container {
+	padding: 0 60px;
 }
 
-h1 {
-	text-align: center;
-	margin: 50px auto 30px;
-	font-size: 2.5rem;
+.scaleable-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
-a {
-	color: $linkColor;
+.site-header {
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	height: 140px;
+	transition: background .8s ease-in-out;
+	&.dark__header {
+		background: #000;
+	}
+	.container {
+		position: relative;
+	}
+	&__inner {
+		position: relative;
+	}
+	.logo {
+		position: absolute;
+		left: 0;
+		top: 27px;
+	}
 }
 
-.sprite-example {
-	text-align: center;
-	i {
+.cart-and-menu {
+	position: absolute;
+	right: 0;
+	color: #fff;
+	top: 34px;
+	z-index: 1;
+	.cart {
 		display: inline-block;
-		margin: 0 10px;
-	}
-	.facebook-logo__icon {
-		@include sprite($facebook-logo-icon);
-	}
-	.google-plus-logo__icon {
-		@include sprite($google-plus-logo-icon);
-	}
-	.instagram-logo__icon {
-		@include sprite($instagram-logo-icon);
-	}
-	.twitter-logo__icon {
-		@include sprite($twitter-logo-icon);
-	}
-	.youtube-logo__icon {
-		@include sprite($youtube-logo-icon);
+		padding-left: 46px;
+		background: url(../img/cart.png) left center no-repeat;
+		font: 700 16px/30px $rs;
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			color: #3bd439;
+		}
 	}
 }
 
-.author-git {
-	text-align: center;
+.toggle-menu {
+	width: 76px;
+	height: 76px;
+	background: transparent;
+	border: none;
+	outline: 0;
+	display: inline-block;
+	margin-left: 45px;
+	vertical-align: middle;
+	padding: 10px;
+	cursor: pointer;
+	&:hover {
+		span {
+			background: #3bd439;
+		}
+	}
+	span {
+		margin-bottom: 4px;
+		display: block;
+		height: 8px;
+		background: #fff;
+		transition: all .3s ease-in-out;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&.active {
+		span:first-child {
+			transform: rotate(-45deg);
+			margin-bottom: -8px;
+		}
+		span:nth-child(2) {
+			transform: rotate(45deg);
+		}
+		span:last-child {
+			display: none;
+		}
+	}
 }
 
-.site-footer {
-	text-align: center;
-	padding: 20px 0;
+.main-nav {
+	position: fixed;
+	right: 0;
+	height: 100%;
+	background: rgba(0, 0, 0, .6);
+	width: 390px;
+	padding: 180px 70px 0 0;
+	transform: translateX(390px);
+	transition: transform .3s ease-in-out;
+	&.visible {
+		transform: none;
+	}
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		text-align: right;
+		li {
+			margin-bottom: 30px;
+		}
+		a {
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: all .3s ease-in-out;
+			&:hover {
+				color: #3bd439;
+			}
+		}
+		li.active a {
+			color: #3bd439;
+		}
+	}
 }
+
+
+.full-height {
+	height: 100%;
+	position: relative;
+}
+
+.intro__heading {
+	font-family: $intro;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+
+.first__section {
+	background: url(../img/index-bg.jpg) top center no-repeat;
+	background-size: cover;
+	.intro__heading {
+		text-align: center;
+		color: #fff;
+		font-size: 80px;
+		line-height: 100px;
+		position: absolute;
+		bottom: 50px;
+		left: 0;
+		width: 100%;
+		margin: 0;
+		animation-delay: 2.5s;
+	}
+}
+
+.index__images {
+	position: absolute;
+	transform-origin : 50% 100%;
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+
+.scaleable-wrapper__inner {
+	bottom: 0;
+	height: 100%;
+	transform-origin : 0% 100%;
+	width: 100%;
+	left: 0;
+	width: 1920px;
+	height: 979px;
+	position: absolute;
+}
+
+.index-womans {
+	left: 0;
+	bottom: 0;
+	transform-origin : 0% 100%;
+	animation-delay: 1.5s;
+}
+
+.index-man {
+	right: 0;
+	bottom: 0;
+	transform-origin : 100% 100%;
+	animation-delay: 1s;
+}
+
+.index-tube {
+	left: 50%;
+	bottom: 170px;
+	margin-left: -215px;
+	transform-origin : 50% 90%;
+	animation-delay: .3s;
+}
+
+.second__section {
+	height: 800px;
+}
+
+.skew__wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.skew__item {
+	width: 33.33%;
+	padding: 0 10px;
+	height: 200px;
+	&-inner {
+		height: 100%;
+		background: red;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

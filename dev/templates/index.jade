@@ -1,16 +1,25 @@
 extends _layout
 block content
 	main.main-content
-		.sprite-example
-			h2.heading Sprite example
-			i.facebook-logo__icon
-			i.google-plus-logo__icon
-			i.instagram-logo__icon
-			i.twitter-logo__icon
-			i.youtube-logo__icon
-		.author-git
-			h2 Github link
-			a(href="https://github.com/narek-t/gulp-jade-sass" target="_blank") https://github.com/narek-t/gulp-jade-sass
+		section.full-height.first__section
+			.container.scaleable-wrapper
+				.scaleable-wrapper__inner
+					.index-womans.index__images.animated.fadeInLeft
+						img(src="img/index-womans.png", alt="")
+					.index-man.index__images.animated.fadeInRight
+						img(src="img/index-man.png", alt="")
+					.index-tube.index__images.animated.bounceInDown
+						img(src="img/tube1.png", alt="")
+					h2.intro__heading.animated.bounceIn Попробуй<br>это на вкус!
+		section.second__section
+			.skew__wrapper
+				.skew__item.institute
+					.skew__item-inner
+				.skew__item.walk
+					.skew__item-inner
+				.skew__item.in-car
+					.skew__item-inner
+
 
 
 

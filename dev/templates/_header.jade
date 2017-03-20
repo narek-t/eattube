@@ -1,4 +1,30 @@
 block header
 
 	header.site-header
-		h1 Blank template for frontend developers
+		.container
+			.site-header__inner
+				a.logo(href="#")
+					img(src="img/logo.png", alt="")
+				.cart-and-menu
+					a.cart(href="#")
+						span.count (0) 
+						span.amount 0 р.
+					button.toggle-menu
+						span
+						span
+						span
+				.main-nav
+					.main-nav__inner
+						ul
+							li
+								a(href="#") Главная
+							li
+								a(href="#") О нас
+							li
+								a(href="#") Преимущества
+							li
+								a(href="#") Продукты
+							li
+								a(href="#") Видео
+							li
+								a(href="#") Контакты

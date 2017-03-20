@@ -1,4 +1,10 @@
-$mainColor: #333;
-$fontFamily: Helvetica, Arial, sans-serif;
-$linkColor: #699;
-$bgColor: #f8f8f8;
+@font-face {
+    font-family: 'intro';
+    src: url('../fonts/introheadb-h1baseshade-webfont.woff2') format('woff2'),
+         url('../fonts/introheadb-h1baseshade-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$rs: 'Roboto Slab';
+$intro: 'intro';
