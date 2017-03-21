@@ -15,13 +15,16 @@ $(document).ready(function () {
 		$(this).toggleClass('active');
 		$('.main-nav').toggleClass('visible');
 	});
-	var header = $(".site-header");
-	$(window).scroll(function() {
-		var scroll = $(window).scrollTop();
-		if (scroll >= 140) {
-			header.addClass("dark__header");
-		} else {
-			header.removeClass("dark__header");
-		}
+	// var header = $(".site-header");
+	// $(window).scroll(function() {
+	// 	var scroll = $(window).scrollTop();
+	// 	if (scroll >= 140) {
+	// 		header.addClass("dark__header");
+	// 	} else {
+	// 		header.removeClass("dark__header");
+	// 	}
+	// });
+	$('.tastes__input').iLightInputNumber({
+		mobile: false
 	});
 });

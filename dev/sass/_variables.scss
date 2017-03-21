@@ -8,3 +8,43 @@
 
 $rs: 'Roboto Slab';
 $intro: 'intro';
+
+.btn {
+	width: 260px;
+	height: 60px;
+	border-radius: 25px;
+	background-color: #28e22c;
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.3), rgba(0,0,0,0));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.3), rgba(0,0,0,0));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,.3), rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.3), rgba(0,0,0,0));
+	background-image: linear-gradient(to top, rgba(0,0,0,.3), rgba(0,0,0,0));
+	cursor: pointer;
+	display: block;
+	margin: 0 auto 50px;
+	color: #fff;
+	text-decoration: none;
+	transform: skew(-6deg);
+	text-align: center;
+	line-height: 60px;
+	font-size: 20px;
+	font-weight: 700;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		top: -5px;
+		left: -5px;
+		bottom: -5px;
+		right: -5px;
+		border: 7px solid rgba(255, 255, 255, .4);
+		border-radius: 25px;
+	}
+	&:hover {
+		background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,.3));
+		background-image: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,.3));
+		background-image: -o-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,.3));
+		background-image: -ms-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,.3));
+		background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.3));
+	}
+}
