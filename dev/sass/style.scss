@@ -28,7 +28,7 @@ body {
 	height: 140px;
 	transition: background .8s ease-in-out;
 	&.dark__header {
-		background: #000;
+		background: rgba(0, 0, 0, .5);
 	}
 	.container {
 		position: relative;
@@ -469,8 +469,153 @@ body {
 	}
 }
 
+.fourth__section {
+	.skew__wrapper--inner {
+		height: 860px;
+	}
+	.skew__item:first-child {
+		.skew__item-inner {
+			width: 118%;
+		}
+		.skew__item--overflow {
+			background-position: left 50px top -50px;
+		}
+		.skew__item-aligner {
+			margin-left: 105px;
+		}
+		.skew__item-heading {
+			top: auto;
+			bottom: 80px;
+		}
+	}
+	.skew__item:nth-child(2) {
+		.skew__item-inner {
+			width: 117%;
+		}
+		.skew__item-heading {
+			top: auto;
+			bottom: 225px;
+		}
+	}
+	.skew__item:nth-child(3) {
+		.skew__item-heading {
+			top: auto;
+			bottom: 85px;
+		}
+		.skew__item-aligner {
+			margin-right: 25px;
+		}
+	}
+}
 
+.parallax-section {
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	.intro__heading {
+		padding: 0 90px;
+		text-align: center;
+		font-size: 80px;
+		color: #fff;
+	}
+	.nlo-img {
+		margin: auto;
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+	.all-parts {
+		width: 205px;
+		margin: auto;
+		position: absolute;
+		top: 420px;
+		left: 50%;
+		margin-left: -100px;
+		z-index: 0;
+		height: calc(100% - 870px);
+	}
+	.pr1 {
+		position: absolute;
+		left: 120px;
+		top: 400px;
+		max-width: 35%;
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+		.txt-side {
+			background-color: #09b70e;
+			transform: skewX(-10deg);
+			padding: 50px;
+			margin-top: 45px;
+			&__inner {
+				transform: skewX(10deg);
+			}
+			p {
+				margin: 0;
+				color: #fff;
+				font: 700 16px/20px $rs;
+			}
+		}
+	}
+	.pr2 {
+		position: absolute;
+		max-width: 35%;
+		right: 120px;
+		top: 350px;
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.pr3 {
+		position: absolute;
+		max-width: 20%;
+		bottom: 10px;
+		left: 120px;
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.pr4 {
+		position: absolute;
+		max-width: 20%;
+		bottom: 10px;
+		right: 120px;
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
 
+.video-wrapper {
+	position: relative;
+	z-index: 1;
+	video {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.play__video {
+	position: absolute;
+	background: url(../img/play-btn.png) center center no-repeat;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	z-index: 1;
+	&.op_btn {
+		background: transparent;
+	}
+}
 
 
 
