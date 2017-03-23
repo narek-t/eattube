@@ -135,8 +135,151 @@ block content
 			video#video_p
 				source(src="img/eattube.mp4" type="video/mp4")
 				| Your browser does not support HTML5 video.
+		section.contacts
+			.container.cf
+				.content-side
+					h2.intro__heading Контакты
+					.addresses
+						.select-wrapper
+							p.select-heading Наши адреса:
+							select#select-location
+							ul#addresses__list.addresses__list.cf
+								li
+									span.city Москва,
+									span.address Ленинский проспект, 158
+								li
+									span.city Москва,
+									span.address Кутузовский проспект, 144
+								li
+									span.city Москва,
+									span.address Ленинский проспект, 158
+								li
+									span.city Москва,
+									span.address Кутузовский проспект, 144
+					.contact-form
+						p.heading Контакты
+						form
+							.contact-form__row
+								.contact-form__col
+									a.tel(href="tel:8-800 500-16-49") 8-800 500-16-49
+									input(type="text" placeholder="Имя")
+									input(type="email" placeholder="Email")
+								.contact-form__col
+									a.email(href="mailto:Eattube@eattube.org") Eattube@eattube.org
+									textarea(placeholder="Сообщение")
+							.submit-row
+								input(type="submit" value="Отправить")
 
-
+				.map-side
+					.map-side__inner#map-canvas
 
 
 block inlineScripts
+	script.
+		var map;
+		var markerData = [
+			{
+				cityCoords: {
+					lat: 55.75069009,
+					lng: 37.62130737
+				},
+				cityName: "Москва",
+				addresses: [
+					{
+						singleAddressContent: 'asdasdasdasd1',
+						singleAddressLat: 55.69848571,
+						singleAddressLng: 37.46612549,
+						singleAddressImg: 'img/singleAddressLogo.png',
+						singleAddressText: 'Ленинский проспект, 158'
+					},
+					{
+						singleAddressContent: 'asdasdasdasd2',
+						singleAddressLat: 55.80899899,
+						singleAddressLng: 37.80670166,
+						singleAddressImg: 'img/singleAddressLogo.png',
+						singleAddressText: 'Ленинский проспект, 1581'
+					},
+				],
+
+			},
+
+			{
+				cityCoords: {
+					lat: 56.31463259,
+					lng: 44.01638031
+				},
+				cityName: "Нижний Новгород",
+				addresses: [
+					{
+						singleAddressContent: 'dsadsadsadsa1',
+						singleAddressLat: 56.3297678,
+						singleAddressLng: 43.85004044,
+						singleAddressImg: 'img/singleAddressLogo.png',
+						singleAddressText: 'Ленинский проспект, 1582'
+					},
+					{
+						singleAddressContent: 'dsadsadsadsadsa2',
+						singleAddressLat: 56.25727382,
+						singleAddressLng: 44.02702332,
+						singleAddressImg: 'img/singleAddressLogo.png',
+						singleAddressText: 'Ленинский проспект, 1583'
+					},
+				],
+
+			},
+			
+		];
+		var infowindow = new google.maps.InfoWindow();
+		var allmarkers = [];
+		 
+		function initialize() {
+		 	map = new google.maps.Map(document.getElementById('map-canvas'), {
+				zoom: 10,
+				center: {lat: 55.75069009, lng: 37.62130737}
+			});
+
+			markerData.forEach(function(data) {
+				data.addresses.forEach(function(innerData) {
+					var newmarker= new google.maps.Marker({
+						map:map,
+						position:{lat:innerData.singleAddressLat, lng:innerData.singleAddressLng},
+						icon: 'img/loc.png'
+					});
+					google.maps.event.addListener(newmarker, 'click', function(){
+				        infowindow.close();
+				        map.panTo(newmarker.getPosition());
+				        infowindow.setContent( "<div class='infowindow' style='background-image: url("+innerData.singleAddressImg+")'>"+innerData.singleAddressContent+"</div>");
+				        infowindow.open(map, newmarker);
+				    });
+				    allmarkers.push(newmarker);
+				});
+
+				jQuery("#select-location").append('<option value="'+[data.cityCoords.lat, data.cityCoords.lng].join('|')+'">'+data.cityName+'</option>');
+			});
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+		jQuery(document).on('change','#select-location',function() {
+			var i = jQuery(this).prop('selectedIndex');
+			var latlng = jQuery(this).val().split('|');
+			var newlat = 1*latlng[0],
+			newlng = 1*latlng[1];
+			map.setCenter({lat:newlat, lng:newlng});
+			map.setZoom(10);
+			jQuery("#addresses__list").empty();
+			markerData[i].addresses.forEach(function(data) {
+				
+				jQuery("#addresses__list").append('<li data-lat="'+data.singleAddressLat+'" data-lng="'+data.singleAddressLng+'"><span class="city">'+markerData[i].cityName+',</span><span class="address">'+data.singleAddressText+'</span></li>');
+			})
+		});
+
+		jQuery('#addresses__list').on('click', 'li', function(event) {
+			event.preventDefault();
+			var lat = jQuery(this).data('lat');
+			var lng = jQuery(this).data('lng');
+			var latLng = new google.maps.LatLng(lat,lng)
+			map.panTo(latLng);
+			map.setZoom(16);
+
+		});
