@@ -15,38 +15,41 @@ $(document).ready(function () {
 		$(this).toggleClass('active');
 		$('.main-nav').toggleClass('visible');
 	});
-	// var header = $(".site-header");
-	// $(window).scroll(function() {
-	// 	var scroll = $(window).scrollTop();
-	// 	if (scroll >= 140) {
-	// 		header.addClass("dark__header");
-	// 	} else {
-	// 		header.removeClass("dark__header");
-	// 	}
-	// });
+	var header = $(".site-header");
+	$(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+		if (scroll >= 140) {
+			header.addClass("dark__header");
+		} else {
+			header.removeClass("dark__header");
+		}
+	});
 	$('.tastes__input').iLightInputNumber({
 		mobile: false
 	});
 
 	var myVideo = document.getElementById("video_p");
-    $(".play__video").addClass("active_btn");
-    function playPause() {
-        if (myVideo.paused){
-            myVideo.play();
-            $(".play__video").addClass("active_btn");
-        } else {
-            myVideo.pause();
-            $(".play__video").removeClass("active_btn");
-        }
-    }
-    myVideo.onended = function() {
-    	$(".play__video").removeClass("active_btn op_btn");
-	};
-    $(".play__video").on('click', function(){
-        $(this).toggleClass("op_btn");
-        playPause();
-        return false
-    });
+	if(myVideo) {
+			$(".play__video").addClass("active_btn");
+	    function playPause() {
+	        if (myVideo.paused){
+	            myVideo.play();
+	            $(".play__video").addClass("active_btn");
+	        } else {
+	            myVideo.pause();
+	            $(".play__video").removeClass("active_btn");
+	        }
+	    }
+	    myVideo.onended = function() {
+	    	$(".play__video").removeClass("active_btn op_btn");
+		};
+	    $(".play__video").on('click', function(){
+	        $(this).toggleClass("op_btn");
+	        playPause();
+	        return false
+	    });
+	}
+    
 
     
 });

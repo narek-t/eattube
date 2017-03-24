@@ -1,0 +1,81 @@
+extends _layout
+block content
+	main.main-content
+		.cart__container
+			.breadcrumbs
+				a(href="#") Главная
+				span  - Корзина
+			.cart__inner
+				table
+					tr
+						th Продукт
+						th 
+						th Цена
+						th количество
+						th итого
+						th Удалить
+					tr
+						td.product-thumbnail
+							a(href="#")
+								img(src="img/thumb.png", alt="")
+						td.product-name
+							a(href="#") Наименование товара 1
+						td.product-price 250 ₽
+						td.product-quantity
+							.quantity
+								input(type="number" step="1" min="0" max="" value="1")
+						td.product-subtotal 250 ₽
+						td.product-remove
+							a(href="#") x
+					tr
+						td.product-thumbnail
+							a(href="#")
+								img(src="img/thumb.png", alt="")
+						td.product-name
+							a(href="#") Наименование товара 2
+						td.product-price 250 ₽
+						td.product-quantity
+							.quantity
+								input(type="number" step="1" min="0" max="" value="1")
+						td.product-subtotal 250 ₽
+						td.product-remove
+							a(href="#") x
+					tr
+						td.product-thumbnail
+							a(href="#")
+								img(src="img/thumb.png", alt="")
+						td.product-name
+							a(href="#") Наименование товара 3
+						td.product-price 250 ₽
+						td.product-quantity
+							.quantity
+								input(type="number" step="1" min="0" max="" value="1")
+						td.product-subtotal 250 ₽
+						td.product-remove
+							a(href="#") x
+
+				.cart__inner-bottom.cf
+					.cart__bottom
+						.cart__bottom-inps
+							a.continue.cart__bottom-inp(href="#") Продолжить покупки
+							input.cart__bottom-inp(type="submit" value="Обновить корзину")
+						p.your-order ВАШ ЗАКАЗ
+						.all-value
+							p К оплате
+							p 960 ₽
+						a.order-cart(href="#") Оформить заказ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

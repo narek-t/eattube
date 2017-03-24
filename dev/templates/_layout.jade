@@ -6,15 +6,16 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="css/style.min.css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic")
 		title Document
 	
-	body
+	body.cart
 		.all-wrapper
 			include _header
 
 			block content
 
-		include _footer
+			include _footer
 
 		block externalScripts
 		script(src="https://maps.googleapis.com/maps/api/js")

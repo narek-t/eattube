@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;amp;subset=cyrillic"/>
+    <title>Document</title>
+  </head>
+  <body class="cart">
+    <div class="all-wrapper">
+      <header class="site-header">
+        <div class="container">
+          <div class="site-header__inner"><a href="#" class="logo"><img src="img/logo.png" alt=""/></a>
+            <div class="cart-and-menu"><a href="#" class="cart"><span class="count">(0) </span><span class="amount">0 р.</span></a>
+              <button class="toggle-menu"><span></span><span></span><span></span></button>
+            </div>
+            <div class="main-nav">
+              <div class="main-nav__inner">
+                <ul>
+                  <li><a href="#">Главная</a></li>
+                  <li><a href="#">О нас</a></li>
+                  <li><a href="#">Преимущества</a></li>
+                  <li><a href="#">Продукты</a></li>
+                  <li><a href="#">Видео</a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main-content">
+        <div class="cart__container">
+          <div class="breadcrumbs"><a href="#">Главная</a><span> - Корзина</span></div>
+          <div class="cart__inner">
+            <table>
+              <tr>
+                <th>Продукт</th>
+                <th> </th>
+                <th>Цена</th>
+                <th>количество</th>
+                <th>итого</th>
+                <th>Удалить</th>
+              </tr>
+              <tr>
+                <td class="product-thumbnail"><a href="#"><img src="img/thumb.png" alt=""/></a></td>
+                <td class="product-name"><a href="#">Наименование товара 1</a></td>
+                <td class="product-price">250 ₽</td>
+                <td class="product-quantity">
+                  <div class="quantity">
+                    <input type="number" step="1" min="0" max="" value="1"/>
+                  </div>
+                </td>
+                <td class="product-subtotal">250 ₽</td>
+                <td class="product-remove"><a href="#">x</a></td>
+              </tr>
+              <tr>
+                <td class="product-thumbnail"><a href="#"><img src="img/thumb.png" alt=""/></a></td>
+                <td class="product-name"><a href="#">Наименование товара 2</a></td>
+                <td class="product-price">250 ₽</td>
+                <td class="product-quantity">
+                  <div class="quantity">
+                    <input type="number" step="1" min="0" max="" value="1"/>
+                  </div>
+                </td>
+                <td class="product-subtotal">250 ₽</td>
+                <td class="product-remove"><a href="#">x</a></td>
+              </tr>
+              <tr>
+                <td class="product-thumbnail"><a href="#"><img src="img/thumb.png" alt=""/></a></td>
+                <td class="product-name"><a href="#">Наименование товара 3</a></td>
+                <td class="product-price">250 ₽</td>
+                <td class="product-quantity">
+                  <div class="quantity">
+                    <input type="number" step="1" min="0" max="" value="1"/>
+                  </div>
+                </td>
+                <td class="product-subtotal">250 ₽</td>
+                <td class="product-remove"><a href="#">x</a></td>
+              </tr>
+            </table>
+            <div class="cart__inner-bottom cf">
+              <div class="cart__bottom">
+                <div class="cart__bottom-inps"><a href="#" class="continue cart__bottom-inp">Продолжить покупки</a>
+                  <input type="submit" value="Обновить корзину" class="cart__bottom-inp"/>
+                </div>
+                <p class="your-order">ВАШ ЗАКАЗ</p>
+                <div class="all-value">
+                  <p>К оплате</p>
+                  <p>960 ₽</p>
+                </div><a href="#" class="order-cart">Оформить заказ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="site-footer">
+        <div class="text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+        </div>
+      </footer>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/lib/lib.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
